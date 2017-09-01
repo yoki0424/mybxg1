@@ -1,6 +1,7 @@
-define(['jquery','template','bootstrap'],function($,template){
+define(['jquery','template','util','bootstrap'],function($,template,util){
+	
 	// 设置导航菜单高亮选中
-	$('.nav a[href="'+location.pathname+'"]').addClass('active');
+	util.setMenu(location.pathname);
 	// 调用后台接口获取列表数据
 	$.ajax({
 		url: '/api/teacher',

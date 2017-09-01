@@ -16,11 +16,33 @@ define(['jquery','template','util'],function($,template,util){
 				// 解析数据渲染页面
 				var html = template('teacheraddTpl',data.result);
 				$('#teacherInfo').html(html);
+				// 提交编辑讲师表单
+				submitForm('/api/teacher/update');
 			}
 		})
 	}else{
 		// 添加
 		var html = template('teacheraddTpl',{operate:'添加讲师',tc_gender:1});
 		$('#teacherInfo').html(html);
+		// 提交添加讲师表单
+		submitForm('/api/teacher/add');
+	}
+
+	// 提交表单公共方法
+	function submitForm(url){
+		$('#teacherBtn').click(function(){
+			$.ajax({
+				type:'post',
+				url:url,
+				data:$('#teacherForm').serialize(),
+				dataType:'json',
+				success:function(data){
+					if(data.code == 200){
+						location.href = '/teacher/list';
+					}
+				}
+
+			})
+		})
 	}
 })

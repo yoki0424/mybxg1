@@ -1,4 +1,4 @@
-define(['jquery','template','util','datepicker','language'],function($,template,util){
+define(['jquery','template','util','datepicker','language','validate'],function($,template,util){
 	// 设置菜单选中
 	util.setMenu('/teacher/list');
 	// 获取讲师编辑的id
@@ -30,19 +30,44 @@ define(['jquery','template','util','datepicker','language'],function($,template,
 
 	// 提交表单公共方法
 	function submitForm(url){
-		$('#teacherBtn').click(function(){
-			$.ajax({
-				type:'post',
-				url:url,
-				data:$('#teacherForm').serialize(),
-				dataType:'json',
-				success:function(data){
-					if(data.code == 200){
-						location.href = '/teacher/list';
-					}
+		// 此方法按钮必须为submit
+		$('#teacherForm').validate({
+			sendForm:false, // 阻止默认提交
+			// 所有都验证通过
+			valid:function(){
+				console.log('ok');
+			},
+			description:{
+				tc_name:{ // ←与HTML文件按中的data-description的值相对应
+					required:'请输入用户名',
+					valid:'用户名可以使用'
+				},
+				tc_pass:{
+					required:'请输入密码',
+					pattern:'密码必须是6位数字',
+					valid:'密码有效'
+				},
+				tc_join_date:{
+					required:"请输入入职时间",
+					valid:"日期有效"
 				}
-
-			})
-		})
+			}
+		});
 	}
+	// function submitForm(url){
+	// 	$('#teacherBtn').click(function(){
+	// 		$.ajax({
+	// 			type:'post',
+	// 			url:url,
+	// 			data:$('#teacherForm').serialize(),
+	// 			dataType:'json',
+	// 			success:function(data){
+	// 				if(data.code == 200){
+	// 					location.href = '/teacher/list';
+	// 				}
+	// 			}
+
+	// 		})
+	// 	})
+	// }
 })

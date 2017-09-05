@@ -22,7 +22,8 @@
 		settings:'../js/settings',
 		state:'../js/state',
 		courseadd:'../js/course-add',
-		courselist:'../js/course-list'
+		courselist:'../js/course-list',
+		coursebasic:'../js/course-basic'
 	},
 	shim:{
 		bootstrap:{

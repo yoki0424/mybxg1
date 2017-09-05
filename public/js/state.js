@@ -7,7 +7,7 @@ define(['jquery'],function($){
 		// 控制遮罩隐藏
 		setTimeout(function(){
 			$('.overlay').hide();
-		}, 500)
+		},500)
 		
 	});
 })

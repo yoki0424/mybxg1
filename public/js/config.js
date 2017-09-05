@@ -20,7 +20,9 @@
 		teacherlist:'../js/teacher-list',
 		teacheradd:'../js/teacher-add',
 		settings:'../js/settings',
-		state:'../js/state'
+		state:'../js/state',
+		courseadd:'../js/course-add',
+		courselist:'../js/course-list'
 	},
 	shim:{
 		bootstrap:{

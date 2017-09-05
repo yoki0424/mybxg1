@@ -3,7 +3,7 @@ define(['jquery'],function($){
 	return {
 		setMenu:function(path){
 			// 设置导航菜单高亮选中
-			$('.nav a[href="'+path+'"]').addClass('active');
+			$('.navs a[href="'+path+'"]').addClass('active').closest('ul').show();
 		},
 		// 获取字符串 querystring
 		qs:function(key){

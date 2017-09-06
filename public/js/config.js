@@ -13,6 +13,7 @@
 		region:'jquery-region/jquery.region',
 		ckeditor:'ckeditor/ckeditor',
 		nprogress:'nprogress/nprogress',
+		jcrop:'jcrop/js/Jcrop',
 		common:'../js/common',
 		login:'../js/login',
 		index:'../js/index',
@@ -42,6 +43,9 @@
 		},
 		ckeditor:{
 			exports:'CKEDITOR'
+		},
+		jcrop:{
+			deps:['jquery']
 		}
 	}
 }) 

@@ -25,7 +25,8 @@
 		courseadd:'../js/course-add',
 		courselist:'../js/course-list',
 		coursebasic:'../js/course-basic',
-		coursepicture:'../js/course-picture'
+		coursepicture:'../js/course-picture',
+		courselesson:'../js/course-lesson'
 	},
 	shim:{
 		bootstrap:{
